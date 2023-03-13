@@ -8,14 +8,6 @@ const routes: Routes = [
       import('./pages/auth/auth.module').then((m) => m.AuthModule),
   },
 
-
-  {
-    path: '',
-    loadChildren: () =>
-      import('./pages/auth/auth.module').then(
-        (m) => m.AuthModule
-      ),
-  },
   {
     path: '**',
     redirectTo: '',

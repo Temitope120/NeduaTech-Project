@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NotificationService } from './core/services/notification.service';
 import {NgToastModule} from 'ng-angular-popup';
 
 
@@ -22,7 +21,7 @@ import {NgToastModule} from 'ng-angular-popup';
     HttpClientModule,
     NgToastModule
   ],
-  providers: [NotificationService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

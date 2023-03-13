@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { emailRegex, passwordRegex } from 'src/environments/environment';
+import { emailRegex } from 'src/environments/environment';
 import { FormBuilder, FormGroup, Validators, } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationServiceService } from 'src/app/core/services/authentication-service.service';
@@ -29,14 +29,13 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void { }
 
   openSuccess(){
-    this.toast.success({detail:'Success Msg', summary:'Record Saved Successfully', position:'br', duration:5000})
+    this.toast.success({detail:'Success', summary:'Record Saved Successfully', position:'br', duration:5000})
   }
   openError(){
-    this.toast.error({detail:'error Msg', summary:'An error occured. Please try again', position:'br', duration:5000})
+    this.toast.error({detail:'Error', summary:'An error occured. Please try again', position:'br', duration:5000})
   }
 
   submit() {
-    let email = this.signUpForm.value.email;
     let payload = {
       ...this.signUpForm.value,
     };
@@ -47,7 +46,6 @@ export class SignUpComponent implements OnInit {
         this.openError();
         return;
       } else if (res !== null) {
-        console.log(res);
         this.openSuccess();
         this.signUpForm.reset();
       }
