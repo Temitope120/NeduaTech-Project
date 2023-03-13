@@ -1,0 +1,88 @@
+<div class="mt-6 px-4">
+    <div class="mx-auto max-w-[360px]">
+        <div class="mx-auto mb-5 px-10">
+            <p routerLink="/auth" class="logo"> NeduaTech</p>
+        </div>
+
+        <div class="mt-4">
+            <div class="mb-4 ">
+                <span class="text-textLight"> Kindly enter your details</span>
+            </div>
+
+            <form [formGroup]="signUpForm">
+                <div class="block w-full md:flex md:gap-x-4">
+                    <div class="w-full md:w-1/2">
+                        <p class="text-textLight text-sm">First Name</p>
+
+                        <input type="text" placeholder="First Name"
+                            class="w-full rounded border-radius-4 text-base text-[#0B2253] px-4 py-3 border border-solid border-grayScale2 outline-none"
+                            formControlName="firstname" [ngClass]="{
+                'border-red-500': 
+                    $any(signUpForm.get('firstname')).errors?.['required'] &&
+                    !($any(signUpForm.get('firstname')).valid ||
+                    $any(signUpForm.get('firstname')).untouched)
+              }" />
+
+                        <small class="text-red-500" *ngIf="$any(signUpForm.get('firstname')).errors?.['required'] &&
+              !($any(signUpForm.get('firstname')).valid ||
+              $any(signUpForm.get('firstname')).untouched)">
+                            First Name is required
+                        </small>
+
+                    </div>
+
+                    <div class="w-full md:w-1/2">
+                        <p class="text-textLight text-sm">Last Name</p>
+
+                        <input type="text" placeholder="Last Name"
+                            class="w-full rounded border-radius-4 text-base text-[#0B2253] px-4 py-3 border border-solid border-grayScale2 outline-none"
+                            formControlName="lastname"
+                            [ngClass]="{'border-red-500': $any(signUpForm.get('lastname')).errors?.['required'] && !($any(signUpForm.get('lastname')).valid || $any(signUpForm.get('lastname')).untouched) }" />
+
+                        <small class="text-red-500"
+                            *ngIf="$any(signUpForm.get('lastname')).errors?.['required'] && !($any(signUpForm.get('lastname')).valid || $any(signUpForm.get('lastname')).untouched)">
+                            Last name is required
+                        </small>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <p class="text-textLight text-sm">Email Address</p>
+
+                    <input type="email" placeholder="Email"
+                        class="w-full rounded border-radius-4 text-base text-[#0B2253] px-4 py-3 border border-solid border-grayScale2 outline-none"
+                        formControlName="email" [ngClass]="{
+                'border-red-500': 
+                    ($any(signUpForm.get('email')).errors?.['required'] ||
+                    $any(signUpForm.get('email')).errors?.['pattern']) &&
+                    !($any(signUpForm.get('email')).valid ||
+                    $any(signUpForm.get('email')).untouched)
+              }" />
+                    <ng-container>
+                        <small class="text-red-500 mt-1" [class.hidden]="
+                  $any(signUpForm.get('email')).valid ||
+                  $any(signUpForm.get('email')).untouched
+                " *ngIf="$any(signUpForm.get('email')).errors?.['required']">
+                            Email is required
+                        </small>
+
+                        <small class="text-red-500" *ngIf="$any(signUpForm.get('email')).errors?.['pattern']">
+                            Please enter a valid email
+                        </small>
+                    </ng-container>
+                </div>
+                <button [disabled]="!signUpForm.valid" (click)="submit()"
+                    class="bg-skyBlue signUpBtn cursor-pointer md:text-base rounded-lg text-normal border-0 shadow-none py-3 w-full outline-0 text-white">
+                    Submit
+                </button>
+
+
+                <p class="text-textLight lg:text-sm text-center">
+                    By Creating an account you agree to accept our
+                    <span class="text-skyBlue cursor-pointer">Privacy Policy</span> and
+                    <span class="text-skyBlue cursor-pointer"> Terms of Service </span>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>

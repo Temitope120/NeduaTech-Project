@@ -3,8 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  appName: `JobPortal`,
+  apiBaseUrl: `https://63a184ccba35b96522e0265d.mockapi.io/neduatech/api/v1/`,
+  logoUrl: ``,
+  serverUrl: `https://63a184ccba35b96522e0265d.mockapi.io/neduatech/api/v1/`,
 };
+
+
+export const emailRegex = `^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}$`;
+export const passwordRegex = `(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#?!@$%^&*-])[A-Za-z0-9#?!@$%^&*-].{7,}`;
 
 /*
  * For easier debugging in development mode, you can import the following file

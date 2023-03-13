@@ -1,0 +1,40 @@
+.signUpBtn{
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    border: 1px solid transparent;
+    background-color: blue;
+}
+.signUpBtn:focus{
+    border: none;
+    outline: none;
+}
+.signUpBtn:hover{
+    background-color: rgb(12, 12, 251);
+    font-size: 17px;
+}
+.mt-3{
+    margin-top: 1rem;
+}
+
+.mt-4{
+    margin-top: 3rem;
+}
+.mt-6{
+    margin-top: 6rem;
+}
+.bg-blue{
+    background-color: blue;
+}
+.logo{
+    color: blue;
+    font-weight: 700;
+    text-align: center;
+    font-size: 2rem;
+    cursor: pointer;
+    border: transparent;
+
+}
