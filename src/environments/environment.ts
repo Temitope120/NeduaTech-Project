@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  appName: `JobPortal`,
+  appName: `NeduaTech`,
   apiBaseUrl: `https://63a184ccba35b96522e0265d.mockapi.io/neduatech/api/v1/`,
   serverUrl: `https://63a184ccba35b96522e0265d.mockapi.io/neduatech/api/v1/`,
 };
